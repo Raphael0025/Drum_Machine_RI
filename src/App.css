@@ -1,38 +1,136 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+body{
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Russo One;
+}
+#root{
+  background-color: #8d8d8d;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.App {
+  text-align: center;
+  background-color: #b3b3b3;
+  border: 5px solid orange;
+  padding: 1em;
+  font-size: 16px;
+  width: 660px;
 }
 
-.App-link {
-  color: #61dafb;
+.drum-key{
+  width: 6em;
+  height: 5em;
+  margin: 0.4em;
+  border-radius: 10px;
+  border: none;
+  background-color: gray;
+  box-shadow: 3px 3px 8px 0 #000;
+  font-family: Russo One;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .drum-key:hover{
+    cursor: pointer;
   }
-  to {
-    transform: rotate(360deg);
+  .drum-key:active, .pressed{
+    box-shadow: 0px 0px 2px 0 #000;
+    transform: translateY(3px) translateX(3px);
+    background-color: orange;
+  }
+  .bc{
+    background-color: orange;
+  }
+#control-pad{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Russo One;
+  /* width: 320px; */
+}
+.lab{
+  margin-bottom: 0;
+}
+#display{
+  width: 200px;
+  height: 50px;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  .switch{
+    width: 50px;
+    padding: 3px;
+    background-color: #000;
+  }
+  .switch-btn{
+    width: 23px;
+    height: 19px;
+    background-color: #00f;
+  }
+  .switch:hover{
+    cursor: pointer;
+  }
+.slider{
+  width: 100%;
+}
+.vol {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 5px;
+  background-color: #4b4b4b;
+  box-shadow: 2px 2px 2px #222, 0 0 2px #2f2f2f;
+  border: 1px solid black;
+  outline: none;
+  border-radius: 0;
+}
+.vol::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 25px;
+  border-radius: 0;
+  background-color: #00f;
+  cursor: pointer;
+}
+@media screen and (max-width: 767px){
+  #control-pad{
+    margin: 2em 0;
+  }
+  .slider{
+    width: 60%;
+  }
+}
+@media screen and (max-width: 575px){
+  .App{
+    width: 450px;
+  }
+  #control-pad{
+    margin: 2em 0;
+  }
+}
+@media screen and (max-width: 400px){
+  .App{
+    width: 350px;
+  }
+  .drum-key{
+    width: 5em;
+    height: 4.5em;
+  }
+}
+@media screen and (max-width: 320px){
+  .App{
+    width: 350px;
+  }
+  .drum-key{
+    width: 3.8em;
+    height: 2.5em;
   }
 }
