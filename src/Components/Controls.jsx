@@ -73,7 +73,7 @@ function Controls({onPowerChange, onVolumeChange, data}) {
     }
     useEffect(() => {
         onVolumeChange(volume)
-    }, [volume]);
+    });
     useEffect(() => {
         renderLabel(data);
     }, [data]);
